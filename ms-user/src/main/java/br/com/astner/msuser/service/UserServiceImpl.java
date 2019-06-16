@@ -2,11 +2,13 @@ package br.com.astner.msuser.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import br.com.astner.msuser.entity.User;
 import br.com.astner.msuser.kafka.producer.Sender;
 import br.com.astner.msuser.repository.UserRepository;
 
+@Component
 public class UserServiceImpl implements UserService {
 	@Value("${spring.kafka.topic.userCreated}")
 	private static String USER_CREATED_TOPIC;
