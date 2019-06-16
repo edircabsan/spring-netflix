@@ -1,0 +1,8 @@
+mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ecs.poc.01
+    password: 1a2b3c@D
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
