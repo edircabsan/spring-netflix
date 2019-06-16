@@ -1,4 +1,16 @@
-mail:
+spring:
+  kafka:
+    consumer:
+      group-id: ms_mail_consumer
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  mail:
     host: smtp.gmail.com
     port: 587
     username: ecs.poc.01
@@ -6,3 +18,6 @@ mail:
     properties.mail.smtp:
       auth: true
       starttls.enable: true
+security:
+  basic:
+    enabled: false
