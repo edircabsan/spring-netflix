@@ -19,7 +19,7 @@ import br.com.astner.msmail.entity.dto.UserDto;
 @Configuration
 @EnableKafka
 public class ReceiverConfig {
-	@Value("${spring.kafka.boostrap-servers}")
+	@Value("${spring.kafka.bootstrap-servers}")
 	private String bootstrapServers;
 	
 	@Bean
@@ -34,9 +34,14 @@ public class ReceiverConfig {
 	
     @Bean
     public ConsumerFactory<String, UserDto> consumerFactory() {
+    	JsonDeserializer<UserDto> jsonDeserializer = new JsonDeserializer<>(UserDto.class);
+    	jsonDeserializer.setRemoveTypeHeaders(false);
+    	jsonDeserializer.addTrustedPackages("*");
+    	jsonDeserializer.setUseTypeMapperForKey(true);
+    	
         return new DefaultKafkaConsumerFactory<>(consumerConfigs(), 
 	        		new StringDeserializer(),
-	                new JsonDeserializer<>(UserDto.class)
+	                jsonDeserializer
                );
     }
 	

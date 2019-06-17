@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
 
 import br.com.astner.msmail.entity.Mail;
 import br.com.astner.msmail.entity.dto.UserDto;
 import br.com.astner.msmail.repository.MailRepository;
 
+@Component
 public class EmailServiceImpl implements EmailService {
 
 	@Autowired
@@ -22,8 +24,8 @@ public class EmailServiceImpl implements EmailService {
 		try {
 			Mail newMail = new Mail();
 			newMail.setTo(input.getUsername());
-			newMail.setSubject("TestSubject");
-			newMail.setText("TestText");
+			newMail.setSubject("E-Mail Verification for " + input.getName());
+			newMail.setText("Hi, " + input.getName() + " this is just an e-mail verification.");
 			
 			SimpleMailMessage message = new SimpleMailMessage();
 			message.setTo(newMail.getTo());

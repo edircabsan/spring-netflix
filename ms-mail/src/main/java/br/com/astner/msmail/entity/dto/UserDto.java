@@ -4,6 +4,7 @@ public class UserDto {
 	private Long id;
 	private String username;
 	private String password;
+	private String name;
 	
 	public UserDto() {
 		
@@ -31,5 +32,13 @@ public class UserDto {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

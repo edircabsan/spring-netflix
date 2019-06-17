@@ -3,6 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/edircabsan/spring-netflix/
+          uri: https://github.com/edircabsan/spring-netflix
           search-paths:
             - "ms-config-properties/{application}/{profile}"
+            - "ms-config-properties/global/{profile}"
