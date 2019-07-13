@@ -13,3 +13,8 @@ $ nohup ~/kafka/bin/kafka-server-start.sh ~/kafka/config/server.properties > ~/k
 Verificando se o Kafka está rodando
 ==========================================================================================================
 $ echo dump | nc localhost 2181 | grep brokers
+
+==========================================================================================================
+Criando um consumidor do Kafka na console
+==========================================================================================================
+$ ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic [topic name] 
