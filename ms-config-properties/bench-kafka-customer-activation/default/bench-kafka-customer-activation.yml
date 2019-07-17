@@ -1,0 +1,9 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic:
+      customerValidated: CUSTOMER_VALIDATED_TOPIC
+      customerActivated: CUSTOMER_ACTIVATED_TOPIC
+security:
+  basic:
+    enabled: false
