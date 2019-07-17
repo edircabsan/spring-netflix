@@ -4,7 +4,7 @@ spring:
     consumerGroup: CustomerValidatedGroup
     topic:
       customerCreated: CUSTOMER_CREATED_TOPIC
-      customerValidated: CUSTOMER_VALIDATED_TOPIC
+      customerValidated: CUSTOMER_ACTIVATED_TOPIC
 security:
   basic:
     enabled: false
