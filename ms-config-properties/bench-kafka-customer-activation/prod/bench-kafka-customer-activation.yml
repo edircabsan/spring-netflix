@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka-1:9092
     topic:
       customerValidated: CUSTOMER_VALIDATED_TOPIC
       customerActivated: CUSTOMER_ACTIVATED_TOPIC
